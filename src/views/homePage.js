@@ -8,7 +8,7 @@ export default class Home extends React.Component {
     constructor() {
         super();
         this.state = { todos: [] };
-        // this.handleAddTodo = this.handleAddTodo.bind(this);
+        this.donarAdd = this.donarAdd.bind(this);
         // this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
         // this.handleToggleTodo = this.handleToggleTodo.bind(this);
       }
@@ -18,32 +18,42 @@ export default class Home extends React.Component {
   // onChange(e) {
   //     this.setState({ [e.target.name]: e.target.value })
   // }
+
     componentDidMount(){
-        console.log('start db');
-        db.table('players')
-        .toArray()
-        .then((todos) => {
-          this.setState({ todos });
-        });
+        db.donars.add({}).then (function(){
+            //
+            // Then when data is stored, read from it
+            //
+            return db.donars
+        })
+        // .then(function (friend) {
+        //     //
+        //     // Display the result
+        //     //
+        //     alert ("Nicolas has shoe size " + friend.shoeSize);
+        // }).catch(function(error) {
+        //    //
+        //    // Finally don't forget to catch any error
+        //    // that could have happened anywhere in the
+        //    // code blocks above.
+        //    //
+        //    alert ("Ooops: " + error);
+        // });
     }
-    // handleAddTodo(title) {
-    //     const todo = {
-    //       title,
-    //       done: false,
-    //     };
-    //     db.table('todos')
-    //       .add(todo)
-    //       .then((id) => {
-    //         const newList = [...this.state.todos, Object.assign({}, todo, { id })];
-    //         this.setState({ todos: newList });
-    //       });
-    //   }
+    donarAdd(e) {
+        console.log('donar details',e.donar)
+        db.donars.add(e.donar).then (function(e){
+            //
+            // Then when data is stored, read from it
+            //
+            // console.log(e.donars)
+        })
+      }
     render() {
         return (
             <div>
                 {/* <Users /> */}
-                <DonarAdd handleAddTodo={this.handleAddTodo} />
-                ***********
+                <DonarAdd donarAdd={this.donarAdd} />
                 <hr />
                 <DonarList />
 

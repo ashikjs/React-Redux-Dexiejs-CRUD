@@ -1,7 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {addDonare} from '../../actions/index'
+
 import { Form,FormGroup,Label,Input,Button } from 'reactstrap';
 
-export default class User extends React.Component {
+class User extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -19,7 +23,8 @@ export default class User extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
       fromSubmit(e) {
-        console.log(this.state)
+        // console.log(this.state)
+        this.props.addDonare(this.state)
         e.preventDefault();
       }
     render(){
@@ -91,3 +96,22 @@ export default class User extends React.Component {
         );
     }
 }
+
+
+// Get apps state and pass it as props to UserList
+//      > whenever state changes, the UserList will automatically re-render
+function mapStateToProps(state) {
+    return {
+        // users: state.users
+    };
+}
+
+// Get actions and pass them as props to to UserList
+//      > now UserList has this.props.selectUser
+function matchDispatchToProps(dispatch){
+    return bindActionCreators({addDonare: addDonare}, dispatch);
+}
+
+// We don't want to return the plain UserList (component) anymore, we want to return the smart Container
+//      > UserList is now aware of state and actions
+export default connect(mapStateToProps, matchDispatchToProps)(User);

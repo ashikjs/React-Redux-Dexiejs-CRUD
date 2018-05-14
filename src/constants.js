@@ -1,0 +1,4 @@
+export const ADD_DONARE = 'ADD_DONARE';
+export const UPDATE_DONARE = 'UPDATE_DONARE';
+export const DELETE_DONARE = 'DELETE_DONARE';
+export const LOAD_DONARES = 'LOAD_DONARES';
