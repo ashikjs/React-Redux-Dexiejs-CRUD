@@ -90,7 +90,6 @@ class User extends React.Component {
                         </Input>
                     </FormGroup>
                         <Button class="marginLeft15 mb-sm-2" type="submit" >ADD</Button>
-                        
                 </Form>
             </div>
         );
