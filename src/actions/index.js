@@ -38,14 +38,4 @@ export function addDonare(donare) {
         });
     }
 
-    //   db.table('todos')
-    //     .add(donare)
-    //     .then((id) => {
-    //         console.log(id, Object.assign({}, donare, { id }))
-    //     //    dispatch({
-    //     //      type: ADD_DONARE,
-    //     //      payload: Object.assign({}, donare, { id }),
-    //     //    });
-    //     });
-    // }
   }
