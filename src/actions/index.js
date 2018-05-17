@@ -25,7 +25,7 @@ export const donareAdd = (donare) => {
 export function addDonare(donare) {
     return dispatch => {
         db.donars
-        .put(donare)
+        .add(donare)
         .then (function(id){
             // dispatch({
             //     type: ADD_DONARE,
