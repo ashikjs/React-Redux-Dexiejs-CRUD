@@ -23,16 +23,19 @@ export const donareAdd = (donare) => {
 };
 
 export function addDonare(donare) {
-    console.log('bad 2')
     return dispatch => {
         db.donars
-        .add(donare)
-        .then (function(e){
-            //
-            // Then when data is stored, read from it
-            //
-            console.log('Data',e)
+        .put(donare)
+        .then (function(id){
+            // dispatch({
+            //     type: ADD_DONARE,
+            //     payload: Object.assign({}, donare, { id }),
+            // });
+            console.log(id)
         })
+        .catch (function (error) {
+            console.log("Error: " + error);
+        });
     }
 
     //   db.table('todos')
