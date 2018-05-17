@@ -1,5 +1,6 @@
-# React-Redux-Boilerplate
-I am going to make a React Redux Boilerplate with folder structure
+
+# React-Redux-Dexiejs-Boilerplate
+I am going to make a React Redux Dexiejs Boilerplate with folder structure
 
 # Project run by 
     npm run dev
