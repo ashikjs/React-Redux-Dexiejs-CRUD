@@ -9,13 +9,9 @@ import allReducers from "./reducers"
 import Routes from "./route"
 import {addDonare} from './actions/index'
 // const store = createStore(allReducers)
-const initialState = {
-    todos: [],
-  };
 
 const store = createStore(
     allReducers,
-    // initialState,
     compose(
       applyMiddleware(thunk)
     ),

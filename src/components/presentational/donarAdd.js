@@ -23,7 +23,7 @@ class User extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
       fromSubmit(e) {
-        // console.log(this.state)
+        console.log('first view',this.state)
         this.props.addDonare(this.state)
         e.preventDefault();
       }
