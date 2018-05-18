@@ -14,13 +14,7 @@ export const selectUser = (user) => {
         payload: user
     }
 };
-export const donareAdd = (donare) => {
-    console.log("you make a request for add new donare: ", donare);
-    return {
-        type: 'DONARE_ADD',
-        payload: donare
-    }
-};
+
 
 export function addDonare(donare) {
     return dispatch => {
