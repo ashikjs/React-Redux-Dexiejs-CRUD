@@ -1,9 +1,12 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-
-export default class DonarList extends React.Component {
+import {connect} from 'react-redux';
+class DonarList extends React.Component {
   render() {
+      // next task view 
+    console.log('Donares List',this.props.donares)
     return (
+       
         <div> 
             <h2 class="text-center">All Donare List</h2>
             <br/>
@@ -29,24 +32,6 @@ export default class DonarList extends React.Component {
                     <td>1</td>
                     <td>@|$</td>
                 </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Md Ashik</td>
-                    <td>AB+</td>
-                    <td>26</td>
-                    <td>51</td>
-                    <td>1</td>
-                    <td>@|$</td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Md Ashik</td>
-                    <td>AB+</td>
-                    <td>26</td>
-                    <td>51</td>
-                    <td>1</td>
-                    <td>@|$</td>
-                </tr>
                 
                 </tbody>
             </Table>
@@ -54,3 +39,12 @@ export default class DonarList extends React.Component {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        donares: state.donare
+    };
+}
+
+export default connect(mapStateToProps)(DonarList);

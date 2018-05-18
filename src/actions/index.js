@@ -14,26 +14,16 @@ export const selectUser = (user) => {
         payload: user
     }
 };
-// export const donareAdd = (donare) => {
-//     console.log("you make a request for add new donare: ", donare);
-//     return {
-//         type: 'DONARE_ADD',
-//         payload: donare
-//     }
-// };
-
 export function addDonare(donare) {
-    console.log("What--: ", donare);
     return dispatch => {
         db.donars
         .add(donare)
         .then ((id)=>{
+            dispatch({
+                type: ADD_DONARE,
+                payload: Object.assign({}, donare, { id })
+            });
             console.log("id!! ", donare);
-        //     // dispatch({
-        //     //     type: ADD_DONARE,
-        //     //     payload: Object.assign({}, donare, { id })
-        //     // });
-        //     console.log(id)
         })
         .catch (function (error) {
             console.log("Error: " + error);

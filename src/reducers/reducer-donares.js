@@ -11,11 +11,14 @@ import {
     LOAD_DONARES
   } from '../constants';
 
-export default function (state=null, { type, payload }) {
+    const initialState = {
+        donars: [],
+    };
+
+export default function (state = initialState, { type, payload }) {
     switch (type) {
         case ADD_DONARE:
-            console.log(state,payload)
-            return payload;
+            return { donars: [...state.donars, payload] };
             break;
             
         case UPDATE_DONARE:

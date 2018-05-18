@@ -16,7 +16,7 @@ const store = createStore(
       applyMiddleware(thunk)
     ),
   );
-
+//   store.dispatch(loadTodos(LOAD_TODOS));
 const app = document.getElementById('root');
 
 ReactDOM.render(
