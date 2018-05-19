@@ -12,10 +12,9 @@ import {addDonare} from './actions/index'
 import fontawesome from '@fortawesome/fontawesome'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import brands from '@fortawesome/fontawesome-free-brands'
-import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
-import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
+import faUser  from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(brands, faCheckSquare, faCoffee)
+fontawesome.library.add(brands,faUser)
 
 const store = createStore(
     allReducers,

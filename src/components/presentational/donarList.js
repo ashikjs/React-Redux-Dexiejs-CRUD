@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import { Table } from 'reactstrap';
 import {connect } from 'react-redux';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-
 class DonarList extends React.Component {
         
     renderList() {
@@ -10,7 +11,7 @@ class DonarList extends React.Component {
             return (
                 <tr>
                     <td scope="row">1</td>
-                    <td>Please add a donare.........</td>
+                    <td>Please add some donares.........<FontAwesomeIcon icon="users" /></td>
                 </tr>
             );
         }
@@ -23,7 +24,7 @@ class DonarList extends React.Component {
                     <td>{donare.age}</td>
                     <td>{donare.weight}</td>
                     <td>{donare.donateBefore}</td>
-                    <td><FontAwesomeIcon icon="coffee" />| <FontAwesomeIcon icon={["fab", "apple"]} /></td>
+                    <td> <Link to="/"><FontAwesomeIcon icon="user-edit" /></Link> | <Link to="/"><FontAwesomeIcon icon="trash-alt" /></Link> </td>
                 </tr>                    
             );
         });
