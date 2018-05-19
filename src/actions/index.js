@@ -14,6 +14,7 @@ export const selectUser = (user) => {
         payload: user
     }
 };
+
 export function addDonare(donare) {
     return dispatch => {
         db.donars

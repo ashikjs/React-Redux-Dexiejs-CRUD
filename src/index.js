@@ -9,6 +9,13 @@ import allReducers from "./reducers"
 import Routes from "./route"
 import {addDonare} from './actions/index'
 // const store = createStore(allReducers)
+import fontawesome from '@fortawesome/fontawesome'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import brands from '@fortawesome/fontawesome-free-brands'
+import faCheckSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
+import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
+
+fontawesome.library.add(brands, faCheckSquare, faCoffee)
 
 const store = createStore(
     allReducers,
