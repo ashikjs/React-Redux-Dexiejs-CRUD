@@ -2,7 +2,7 @@ import React from 'react';
 import {Route} from 'react-router'
 
 // All Pages Call
-import Home from "../src/views/homePage"
+import Home from "../src/views/home"
 
 export default class Routes extends React.Component {
 

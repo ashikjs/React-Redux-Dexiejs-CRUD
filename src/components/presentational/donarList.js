@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 import { Table } from 'reactstrap';
 import {connect } from 'react-redux';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+
 class DonarList extends React.Component {
-        
+    handleClick(event) {
+        // event.preventDefault()
+        var el = event
+        console.log(el)
+      }
+
     renderList() {
         if (this.props.donares.length == 0) {
             return (
@@ -24,7 +30,13 @@ class DonarList extends React.Component {
                     <td>{donare.age}</td>
                     <td>{donare.weight}</td>
                     <td>{donare.donateBefore}</td>
-                    <td> <Link to="/"><FontAwesomeIcon icon="user-edit" /></Link> | <Link to="/"><FontAwesomeIcon icon="trash-alt" /></Link> </td>
+                    <td>
+                       <FontAwesomeIcon icon="user-edit" /> | 
+                        <FontAwesomeIcon 
+                            icon="trash-alt" 
+                            onClick={this.handleClick.bind(this, donare.id)}
+                         />
+                    </td>
                 </tr>                    
             );
         });
