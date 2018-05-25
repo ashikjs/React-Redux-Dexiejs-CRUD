@@ -47,6 +47,7 @@ class User extends React.Component {
                     <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                         <Label class="mr-sm-2">Blood Group</Label>
                         <Input type="select" name="bloodGroup" value={this.state.bloodGroup} onChange={this.onChange}>
+                            <option selected></option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
@@ -60,6 +61,7 @@ class User extends React.Component {
                     <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                         <Label class="mr-sm-2">Age</Label>
                         <Input type="select" name="age" value={this.state.age} onChange={this.onChange}>
+                            <option  selected></option>
                             <option value="18-">18-</option>
                             <option value="18+">18+</option>
                             <option value="50+">50+</option>
@@ -68,6 +70,7 @@ class User extends React.Component {
                     <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                         <Label class="mr-sm-2">Weight</Label>
                         <Input type="select" name="weight" value={this.state.weight} onChange={this.onChange}>
+                            <option  selected></option>
                             <option value="50-">50-</option>
                             <option value="50+">50+</option>
                         </Input>
@@ -75,6 +78,7 @@ class User extends React.Component {
                     <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                         <Label class="mr-sm-2">Previously gave blood</Label>
                         <Input type="select" name="donateBefore" value={this.state.donateBefore} onChange={this.onChange}>
+                            <option selected></option>
                             <option value="NO">NO</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
