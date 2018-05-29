@@ -1,7 +1,5 @@
 import React from 'react';
-import DonorAdd from "../components/Smart/DonareContainers/donare"
-// import DonorList from "../components/Presentational/donarList"
-// import Users from "../components/userlist"
+import Donor from "../components/Smart/DonorContainers/donor"
 import db from "../db"
 
 export default class Home extends React.Component {
@@ -19,10 +17,8 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                {/* <Users /> */}
-                <DonorAdd  />
+                <Donor />
                 <hr />
-                {/* <DonarList /> */}
             </div>
         );
     }

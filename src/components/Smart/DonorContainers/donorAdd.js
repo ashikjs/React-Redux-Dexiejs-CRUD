@@ -1,5 +1,5 @@
 import React from 'react';
-import DonorAddForm from '../../Presentational/donareAddForm';
+import DonorAddForm from '../../Presentational/donorAddForm';
 
 class Donor extends React.Component {
     constructor() {

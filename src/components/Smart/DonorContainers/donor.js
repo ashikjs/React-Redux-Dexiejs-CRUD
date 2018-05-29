@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {donorAdd,donorDelete} from '../../../actions/index';
-import DonorAdd from './donarAdd';
-import DonorList from '../../Presentational/donarList';
+import DonorAdd from './donorAdd';
+import DonorList from '../../Presentational/donorList';
 import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
 
 const Donor = ({donorAdd, donorDelete}) =>

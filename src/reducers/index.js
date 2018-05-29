@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import UserReducer from './reducer-users';
 import ActiveUserReducer from './reducer-active-user';
-import DonorReducer from './reducer-donares';
+import DonorReducer from './reducer-donors';
 
 /*
  * We combine all reducers into a single object before updated data is dispatched (sent) to store

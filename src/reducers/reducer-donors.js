@@ -24,7 +24,6 @@ export default function (state = initialState, { type, payload }) {
             return payload;
             break;
         case DELETE_DONOR:
-            console.log('Reducer ', payload)
             return { donors: state.donors.filter((todo) => todo.id !== payload) };
             break;
         case LOAD_DONORS:
