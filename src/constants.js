@@ -1,4 +1,4 @@
-export const ADD_DONARE = 'ADD_DONARE';
-export const UPDATE_DONARE = 'UPDATE_DONARE';
-export const DELETE_DONARE = 'DELETE_DONARE';
-export const LOAD_DONARES = 'LOAD_DONARES';
+export const ADD_DONOR = 'ADD_DONOR';
+export const UPDATE_DONOR = 'UPDATE_DONOR';
+export const DELETE_DONOR = 'DELETE_DONOR';
+export const LOAD_DONORS = 'LOAD_DONORS';

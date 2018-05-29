@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import UserReducer from './reducer-users';
 import ActiveUserReducer from './reducer-active-user';
-import DonareReducer from './reducer-donares';
+import DonorReducer from './reducer-donares';
 
 /*
  * We combine all reducers into a single object before updated data is dispatched (sent) to store
@@ -11,7 +11,7 @@ import DonareReducer from './reducer-donares';
 const allReducers = combineReducers({
     users: UserReducer,
     activeUser: ActiveUserReducer,
-    donare: DonareReducer,
+    donor: DonorReducer,
 });
 
 export default allReducers

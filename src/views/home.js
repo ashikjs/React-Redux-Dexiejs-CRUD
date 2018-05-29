@@ -1,7 +1,7 @@
 import React from 'react';
-import DonarAdd from "../components/Smart/DonareContainers/donare"
-import DonarList from "../components/Presentational/donarList"
-import Users from "../components/userlist"
+import DonorAdd from "../components/Smart/DonareContainers/donare"
+// import DonorList from "../components/Presentational/donarList"
+// import Users from "../components/userlist"
 import db from "../db"
 
 export default class Home extends React.Component {
@@ -11,11 +11,8 @@ export default class Home extends React.Component {
     }
 
     componentDidMount(){
-        db.donars.add({}).then (function(){
-            //
-            // Then when data is stored, read from it
-            //
-            return db.donars
+        db.donors.add({}).then (function(){
+            return db.donors
         })
     }
     
@@ -23,9 +20,9 @@ export default class Home extends React.Component {
         return (
             <div>
                 {/* <Users /> */}
-                <DonarAdd  />
+                <DonorAdd  />
                 <hr />
-                <DonarList />
+                {/* <DonarList /> */}
             </div>
         );
     }

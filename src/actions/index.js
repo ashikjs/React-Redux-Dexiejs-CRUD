@@ -1,8 +1,8 @@
 import {
-    ADD_DONARE,
-    UPDATE_DONARE,
-    DELETE_DONARE,
-    LOAD_DONARES
+    ADD_DONOR,
+    UPDATE_DONOR,
+    DELETE_DONOR,
+    LOAD_DONORS
   } from '../constants';
   import db from '../db';
   
@@ -15,20 +15,34 @@ export const selectUser = (user) => {
     }
 };
 
-export function addDonare(donare) {
+export function donorAdd(donor) {
     return dispatch => {
-        db.donars
-        .add(donare)
+        db.donors
+        .add(donor)
         .then ((id)=>{
             dispatch({
-                type: ADD_DONARE,
-                payload: Object.assign({}, donare, { id })
+                type: ADD_DONOR,
+                payload: Object.assign({}, donor, { id })
             });
-            console.log("id!! ", donare);
+            console.log("id!! ", donor);
         })
         .catch (function (error) {
             console.log("Error: " + error);
         });
     }
+
+  }
+
+export function donorDelete(id) {
+    return (dispatch) => {
+        db.donors
+          .delete(id)
+          .then(() => {
+            dispatch({
+              type: DELETE_DONOR,
+              payload: id,
+            });
+          });
+      };
 
   }

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Form,FormGroup,Label,Input,Button } from 'reactstrap';
 
-const DonareAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit}) => 
+const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit}) => 
     <div>
         <br/>
         <h2 class="text-center">Add a Donare</h2>
@@ -82,4 +82,4 @@ const DonareAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmi
 //     handleDeleteTodo: PropTypes.func.isRequired
 //   };
   
-export default DonareAddForm;
+export default DonorAddForm;

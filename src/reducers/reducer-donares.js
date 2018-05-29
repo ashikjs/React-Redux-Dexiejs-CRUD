@@ -5,23 +5,29 @@
 
 // "state = null" is set so that we don't throw an error when app first boots up
 import {
-    ADD_DONARE,
-    UPDATE_DONARE,
-    DELETE_DONARE,
-    LOAD_DONARES
+    ADD_DONOR,
+    UPDATE_DONOR,
+    DELETE_DONOR,
+    LOAD_DONORS
   } from '../constants';
 
     const initialState = {
-        donars: [],
+        donors: [],
     };
 
 export default function (state = initialState, { type, payload }) {
     switch (type) {
-        case ADD_DONARE:
-            return { donars: [...state.donars, payload] };
+        case ADD_DONOR:
+            return { donars: [...state.donors, payload] };
             break;
-            
-        case UPDATE_DONARE:
+        case UPDATE_DONOR:
+            return payload;
+            break;
+        case DELETE_DONOR:
+            console.log('Reducer ' + type, payload)
+            return payload;
+            break;
+        case LOAD_DONORS:
             return payload;
             break;
     }

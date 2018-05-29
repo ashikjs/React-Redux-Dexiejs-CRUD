@@ -7,10 +7,9 @@ import {Provider} from 'react-redux'
 // import {createStore, applyMiddleware} from 'redux'
 import allReducers from "./reducers"
 import Routes from "./route"
-import {addDonare} from './actions/index'
 // const store = createStore(allReducers)
 import fontawesome from '@fortawesome/fontawesome'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import brands from '@fortawesome/fontawesome-free-brands'
 import faUser  from '@fortawesome/fontawesome-free-solid'
 

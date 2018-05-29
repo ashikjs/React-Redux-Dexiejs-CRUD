@@ -1,40 +1,35 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
 import { Table } from 'reactstrap';
 import {connect } from 'react-redux';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-class DonarList extends React.Component {
-    handleClick(event) {
-        // event.preventDefault()
-        var el = event
-        console.log(el)
-      }
-
+class DonorList extends React.Component{
     renderList() {
-        if (this.props.donares.length == 0) {
+        const {donors, donorDelete} = this.props;
+
+        if (donors.length == 0) {
             return (
                 <tr>
                     <td scope="row">1</td>
-                    <td>Please add some donares.........<FontAwesomeIcon icon="users" /></td>
+                    <td>Please add some donors.........</td>
                 </tr>
             );
         }
-        return this.props.donares.map((donare) => {
+        return donors.map((donor) => {
             return (
-                <tr key={donare.id}>
-                    <td scope="row">{donare.id}</td>
-                    <td>{donare.name}</td>
-                    <td>{donare.bloodGroup}</td>
-                    <td>{donare.age}</td>
-                    <td>{donare.weight}</td>
-                    <td>{donare.donateBefore}</td>
+                <tr key={donor.id}>
+                    <td scope="row">{donor.id}</td>
+                    <td>{donor.name}</td>
+                    <td>{donor.bloodGroup}</td>
+                    <td>{donor.age}</td>
+                    <td>{donor.weight}</td>
+                    <td>{donor.donateBefore}</td>
                     <td>
                        <FontAwesomeIcon icon="user-edit" /> | 
                         <FontAwesomeIcon 
                             icon="trash-alt" 
-                            onClick={this.handleClick.bind(this, donare.id)}
+                            onClick={() => donorDelete(donor.id)}
                          />
                     </td>
                 </tr>                    
@@ -43,13 +38,7 @@ class DonarList extends React.Component {
     }
 
     render() {
-      // next task view 
-
-
-      
-    console.log('Donares List',this.props.donares)
     return (
-       
         <div> 
             <h2 class="text-center">All Donare List</h2>
             <br/>
@@ -77,8 +66,8 @@ class DonarList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        donares: state.donare.donars
+        donors: state.donor.donors
     };
 }
 
-export default connect(mapStateToProps)(DonarList);
+export default connect(mapStateToProps)(DonorList);

@@ -1,7 +1,7 @@
 import React from 'react';
-import DonareAddForm from '../../Presentational/donareAddForm';
+import DonorAddForm from '../../Presentational/donareAddForm';
 
-class Donare extends React.Component {
+class Donor extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -19,13 +19,13 @@ class Donare extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
     fromSubmit(e) {
-        console.log('first view',this.state)
-        this.props.addDonare(this.state)
+        // console.log('first view',this.state)
+        this.props.donorAdd(this.state)
         e.preventDefault();
     }
     render(){
         return (
-            <DonareAddForm 
+            <DonorAddForm 
                 onChange={this.onChange} 
                 onSubmit={this.fromSubmit}
             />
@@ -33,4 +33,4 @@ class Donare extends React.Component {
     }
 }
 
-export default Donare
+export default Donor
