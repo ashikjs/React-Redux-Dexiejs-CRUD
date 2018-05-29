@@ -18,7 +18,7 @@ import {
 export default function (state = initialState, { type, payload }) {
     switch (type) {
         case ADD_DONOR:
-            return { donars: [...state.donors, payload] };
+            return { donors: [...state.donors, payload] };
             break;
         case UPDATE_DONOR:
             return payload;

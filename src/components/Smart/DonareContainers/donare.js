@@ -25,9 +25,9 @@ function mapStateToProps(state) {
 // }
 const mapDispatchToProps = ( dispatch ) => ({
     donorAdd: ( donor ) => {
-        dispatch( donorAdd( donor ) );
+        dispatch( donorAdd( {donor} ) );
     },
-    donorAdd: ( id ) => {
+    donorDelete: ( id ) => {
         dispatch( donorDelete( id ) );
     }
 });

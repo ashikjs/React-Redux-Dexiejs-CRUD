@@ -24,7 +24,7 @@ export function donorAdd(donor) {
                 type: ADD_DONOR,
                 payload: Object.assign({}, donor, { id })
             });
-            console.log("id!! ", donor);
+            console.log("action-- ", donor);
         })
         .catch (function (error) {
             console.log("Error: " + error);
