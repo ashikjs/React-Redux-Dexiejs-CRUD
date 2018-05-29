@@ -18,14 +18,14 @@ import {
 export default function (state = initialState, { type, payload }) {
     switch (type) {
         case ADD_DONOR:
-            return { donors: [...state.donors, payload] };
+            return { donors: [...state, payload] };
             break;
         case UPDATE_DONOR:
             return payload;
             break;
         case DELETE_DONOR:
-            console.log('Reducer ' + type, payload)
-            return payload;
+            console.log('Reducer ', payload)
+            return { donors: state.donors.filter((todo) => todo.id !== payload) };
             break;
         case LOAD_DONORS:
             return payload;

@@ -24,8 +24,8 @@ function mapStateToProps(state) {
 //     return  bindActionCreators({addDonare: addDonare}, dispatch)
 // }
 const mapDispatchToProps = ( dispatch ) => ({
-    donorAdd: ( donor ) => {
-        dispatch( donorAdd( {donor} ) );
+    donorAdd: (donort) => {
+        dispatch( donorAdd(donort) );
     },
     donorDelete: ( id ) => {
         dispatch( donorDelete( id ) );

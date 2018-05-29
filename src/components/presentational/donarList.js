@@ -7,7 +7,8 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 class DonorList extends React.Component{
     renderList() {
         const {donors, donorDelete} = this.props;
-            console.log('list vieed',donors)
+            // console.log('list vieed',donors.length)
+        // if (donors) {
         if (donors.length == 0) {
             return (
                 <tr>

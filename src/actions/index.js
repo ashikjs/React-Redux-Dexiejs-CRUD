@@ -22,9 +22,10 @@ export function donorAdd(donor) {
         .then ((id)=>{
             dispatch({
                 type: ADD_DONOR,
-                payload: Object.assign({}, donor, { id })
+                // payload: Object.assign({}, donor, { id })
+                payload: donor
             });
-            console.log("action-- ", donor);
+            // console.log("action-- ", id);
         })
         .catch (function (error) {
             console.log("Error: " + error);
