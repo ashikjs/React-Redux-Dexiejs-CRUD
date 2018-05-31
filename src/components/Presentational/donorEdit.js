@@ -6,7 +6,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
     const ModalExample = ({toggle,modal,name,bloodGroup,weight,age,onChange,donateBefore,onSubmit}) => 
 
         <div>
-        {/* {console.log(modal)}  */}
+        {console.log(modal)} 
 
           <Modal isOpen={modal}>
             <ModalHeader>Donare Edit</ModalHeader>

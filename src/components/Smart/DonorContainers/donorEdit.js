@@ -9,18 +9,12 @@ class Donor extends React.Component {
             bloodGroup: '',
             age: '',
             weight: '',
-            donateBefore: '',
-            modal: true
+            donateBefore: ''
         };
-        this.toggle = this.toggle.bind(this);
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
       }
-         toggle() {
-        this.setState({
-          modal: !this.state.modal
-        });
-      }
+       
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -36,6 +30,7 @@ class Donor extends React.Component {
                 onSubmit={this.fromSubmit}
                 toggle={this.props.toggle}  
                 modal={this.props.modal}
+                data={this.props.data}
             />
         );
     }

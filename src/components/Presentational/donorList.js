@@ -6,25 +6,11 @@ import {connect } from 'react-redux';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 class DonorList extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       modal: true,
-    //       data: {}
-    //     };
-    
-    //     this.toggle = this.toggle.bind(this);
-    //   }
-    
-    //   toggle(e) {
-    //     this.setState({
-    //         modal: !this.state.modal
-    //     });
-    //   }
-    toggle(donor) {
-        // console.log(donor)
-        this.props.editDonor({donor: donor})
-      }
+
+    edit(donor) {
+        this.props.data(donor);
+        this.props.toggle()
+    }
     
     renderList() {
         const {donors, donorDelete} = this.props;
@@ -47,7 +33,7 @@ class DonorList extends React.Component {
                     <td>{donor.weight}</td>
                     <td>{donor.donateBefore}</td>
                     <td>
-                        <FontAwesomeIcon icon="user-edit" onClick={this.toggle.bind(this, donor)} /> | 
+                        <FontAwesomeIcon icon="user-edit" onClick={this.edit.bind(this, donor)} /> | 
                         <FontAwesomeIcon 
                             icon="trash-alt" 
                             onClick={() => donorDelete(donor.id)}

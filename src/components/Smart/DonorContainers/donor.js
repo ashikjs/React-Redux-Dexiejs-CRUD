@@ -12,25 +12,39 @@ class Donor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          modal: true,
+          modal: false,
           data: {}
         };
         this.toggle = this.toggle.bind(this);
+        this.data = this.data.bind(this);
     }
     
     toggle(e) {
-        this.setState({
-            modal: !this.state.modal
-        });
+        this.setState({ modal: !this.state.modal });
     }
-   
+    data(e) {
+        this.setState({ data: e });
+
+    }
 
     render(){
         const {donorAdd,donorDelete} = this.props
+        
         return (
             <div>
-                <DonorAdd donorAdd={donorAdd} /> 
-                <DonorList donorDelete={donorDelete} editDonor={this.data} />
+                <DonorAdd 
+                    donorAdd={donorAdd} 
+                /> 
+                <DonorList 
+                    donorDelete={donorDelete} 
+                    toggle={this.toggle} 
+                    data={this.data} 
+                />
+                <DonorEdit 
+                    toggle={this.toggle}  
+                    modal={this.state.modal}
+                    data={this.state.data}
+                />
             </div>
         );
     }
