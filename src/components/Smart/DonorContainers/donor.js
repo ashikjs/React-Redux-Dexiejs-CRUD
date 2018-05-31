@@ -8,24 +8,44 @@ import DonorAdd from './donorAdd';
 import DonorList from '../../Presentational/donorList';
 import DonorEdit from './donorEdit';
 
-// class Donor extends React.Component {
-//     render(){
-//         return (
-//             <DonorAdd addDonare={this.props.addDonare} />, 
-//             <DonorList donorDelete={donorDelete} />
-//         );
-//     }
-// }
-const Donor = ({donorAdd, donorDelete,data}) =>
-    <div>
-        <DonorAdd donorAdd={donorAdd} /> 
-        <DonorList donorDelete={donorDelete} editDonor={data} />
-        <DonorEdit 
-                // toggle={this.toggle}  
-                // modal={this.state.modal}
-                data={data}
-        />
-    </div>
+class Donor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          modal: true,
+          data: {}
+        };
+        this.toggle = this.toggle.bind(this);
+    }
+    
+    toggle(e) {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+   
+
+    render(){
+        const {donorAdd,donorDelete} = this.props
+        return (
+            <div>
+                <DonorAdd donorAdd={donorAdd} /> 
+                <DonorList donorDelete={donorDelete} editDonor={this.data} />
+            </div>
+        );
+    }
+}
+
+// const Donor = ({donorAdd, donorDelete,data}) =>
+//     <div>
+//         <DonorAdd donorAdd={donorAdd} /> 
+//         <DonorList donorDelete={donorDelete} editDonor={data} />
+//         <DonorEdit 
+//                 // toggle={this.toggle}  
+//                 // modal={this.state.modal}
+//                 data={data}
+//         />
+//     </div>
 
 // Get apps state and pass it as props to UserList
 //      > whenever state changes, the UserList will automatically re-render

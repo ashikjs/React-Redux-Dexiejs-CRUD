@@ -6,7 +6,8 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
     const ModalExample = ({toggle,modal,name,bloodGroup,weight,age,onChange,donateBefore,onSubmit}) => 
 
         <div>
-         {/* {console.log(modal)}  */}
+        {/* {console.log(modal)}  */}
+
           <Modal isOpen={modal}>
             <ModalHeader>Donare Edit</ModalHeader>
             <Form onSubmit={onSubmit} action="javascript:">
@@ -47,30 +48,30 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                     </FormGroup>
                     <FormGroup class="row mb-sm-2">
                         <div class="col-sm">
-                        <Label class="mr-sm-2">Weight</Label>
-                        <Input type="select" name="weight" value={weight} onChange={onChange}>
-                            <option value=""></option>
-                            <option value="50-">50-</option>
-                            <option value="50+">50+</option>
-                        </Input>
+                            <Label class="mr-sm-2">Weight</Label>
+                            <Input type="select" name="weight" value={weight} onChange={onChange}>
+                                <option value=""></option>
+                                <option value="50-">50-</option>
+                                <option value="50+">50+</option>
+                            </Input>
                         </div>
                         <div class="col-sm">
-                        <Label class="mr-sm-2">Previously gave blood</Label>
-                        <Input type="select" name="donateBefore" value={donateBefore} onChange={onChange}>
-                            <option value=""></option>
-                            <option value="NO">NO</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="10+">10+</option>
-                        </Input>
+                            <Label class="mr-sm-2">Previously gave blood</Label>
+                            <Input type="select" name="donateBefore" value={donateBefore} onChange={onChange}>
+                                <option value=""></option>
+                                <option value="NO">NO</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="10+">10+</option>
+                            </Input>
                         </div>
                     </FormGroup>
                 </ModalBody>
@@ -81,9 +82,9 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
             </Form>
           </Modal>
         </div>
-      ;
+    ;
   
-  export default ModalExample;
+export default ModalExample;
 
 // TODO: propTypes use or implement
 

@@ -22,6 +22,7 @@ class DonorList extends React.Component {
     //     });
     //   }
     toggle(donor) {
+        // console.log(donor)
         this.props.editDonor({donor: donor})
       }
     
@@ -78,7 +79,6 @@ class DonorList extends React.Component {
                     {this.renderList()}
                 </tbody>
             </Table>
-            
       </div>
     );
   }
