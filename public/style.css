@@ -17,3 +17,6 @@ ul{
 .marginLeft15 {
     margin-left: 15px;
 }
+.table td svg {
+    cursor: pointer;
+}

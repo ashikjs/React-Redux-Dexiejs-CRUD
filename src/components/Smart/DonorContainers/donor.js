@@ -1,15 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
+
 import {donorAdd,donorDelete} from '../../../actions/index';
 import DonorAdd from './donorAdd';
 import DonorList from '../../Presentational/donorList';
-import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
+import DonorEdit from './donorEdit';
 
-const Donor = ({donorAdd, donorDelete}) =>
+// class Donor extends React.Component {
+//     render(){
+//         return (
+//             <DonorAdd addDonare={this.props.addDonare} />, 
+//             <DonorList donorDelete={donorDelete} />
+//         );
+//     }
+// }
+const Donor = ({donorAdd, donorDelete,data}) =>
     <div>
         <DonorAdd donorAdd={donorAdd} /> 
-        <DonorList donorDelete={donorDelete} />
+        <DonorList donorDelete={donorDelete} editDonor={data} />
+        <DonorEdit 
+                // toggle={this.toggle}  
+                // modal={this.state.modal}
+                data={data}
+        />
     </div>
 
 // Get apps state and pass it as props to UserList

@@ -8,7 +8,7 @@ const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit
         <br/>
         <h2 class="text-center">Add a Donare</h2>
         <br/>
-        <Form inline  onSubmit={onSubmit} action="javascript:">
+        <Form inline onSubmit={onSubmit} action="javascript:">
             <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                 <Label for="name" class="mr-sm-2">Name</Label>
                 <Input 

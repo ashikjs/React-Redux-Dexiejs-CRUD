@@ -1,14 +1,33 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Table } from 'reactstrap';
+import { Table,Button } from 'reactstrap';
 import {connect } from 'react-redux';
+
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-class DonorList extends React.Component{
+class DonorList extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       modal: true,
+    //       data: {}
+    //     };
+    
+    //     this.toggle = this.toggle.bind(this);
+    //   }
+    
+    //   toggle(e) {
+    //     this.setState({
+    //         modal: !this.state.modal
+    //     });
+    //   }
+    toggle(donor) {
+        this.props.editDonor({donor: donor})
+      }
+    
     renderList() {
         const {donors, donorDelete} = this.props;
-            // console.log('list vieed',donors.length)
-        // if (donors) {
+        // if (donors) { 
         if (donors.length == 0) {
             return (
                 <tr>
@@ -16,7 +35,7 @@ class DonorList extends React.Component{
                     <td>Please add some donors.........</td>
                 </tr>
             );
-        }
+        };
         return donors.map((donor) => {
             return (
                 <tr key={donor.id}>
@@ -27,11 +46,11 @@ class DonorList extends React.Component{
                     <td>{donor.weight}</td>
                     <td>{donor.donateBefore}</td>
                     <td>
-                       <FontAwesomeIcon icon="user-edit" /> | 
+                        <FontAwesomeIcon icon="user-edit" onClick={this.toggle.bind(this, donor)} /> | 
                         <FontAwesomeIcon 
                             icon="trash-alt" 
                             onClick={() => donorDelete(donor.id)}
-                         />
+                        />
                     </td>
                 </tr>                    
             );
@@ -59,11 +78,11 @@ class DonorList extends React.Component{
                     {this.renderList()}
                 </tbody>
             </Table>
+            
       </div>
     );
   }
 }
-
 
 function mapStateToProps(state) {
     return {
