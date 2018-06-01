@@ -5,15 +5,6 @@ import {
     LOAD_DONORS
   } from '../constants';
   import db from '../db';
-  
-
-export const selectUser = (user) => {
-    console.log("You clicked this player: ", user.first);
-    return {
-        type: 'USER_SELECTED',
-        payload: user
-    }
-};
 
 export function donorGet() {
     return (dispatch) => {
@@ -34,10 +25,8 @@ export function donorAdd(donor) {
         .then ((id)=>{
             dispatch({
                 type: ADD_DONOR,
-                // payload: Object.assign({}, donor, { id })
                 payload: donor
             });
-            // console.log("action-- ", id);
         })
         .catch (function (error) {
             console.log("Error: " + error);
@@ -46,16 +35,16 @@ export function donorAdd(donor) {
 }
   
 export function donorUpdate(donor) {
-        return (dispatch) => {
-          db.donors
-            .put(donor)
-            .then(() => {
-              dispatch({
-                type: UPDATE_DONOR,
-                payload: donor,
-              });
+    return (dispatch) => {
+        db.donors
+        .put(donor)
+        .then(() => {
+            dispatch({
+            type: UPDATE_DONOR,
+            payload: donor,
             });
-        };
+        });
+    };
 }
 
 export function donorDelete(id) {
