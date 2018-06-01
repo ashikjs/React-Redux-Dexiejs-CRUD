@@ -26,8 +26,8 @@ class Donor extends React.Component {
         this.props.toggle()
     }
     fromSubmit(e) {
-        // console.log('first view',this.state)
-        this.props.donorAdd(this.state)
+        console.log('donorUpdate view',this.state)
+        this.props.donorUpdate(this.state)
         e.preventDefault();
     }
     render(){

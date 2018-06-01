@@ -47,3 +47,17 @@ export function donorDelete(id) {
       };
 
   }
+export function donorUpdate(id) {
+    // return (dispatch) => {
+    //     db.donors
+    //       .put(id)
+    //       .then(() => {
+    //         dispatch({
+    //           type: DELETE_DONOR,
+    //           payload: id,
+    //         });
+    //       });
+    //   };
+    console.log(id)
+
+  }

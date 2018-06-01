@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
 
-import {donorAdd,donorDelete} from '../../../actions/index';
+import {donorAdd,donorDelete,donorUpdate} from '../../../actions/index';
 import DonorAdd from './donorAdd';
 import DonorList from '../../Presentational/donorList';
 import DonorEdit from './donorEdit';
@@ -27,7 +27,7 @@ class Donor extends React.Component {
     }
 
     render(){
-        const {donorAdd,donorDelete} = this.props
+        const {donorAdd,donorUpdate,donorDelete} = this.props
         
         return (
             <div>
@@ -40,6 +40,7 @@ class Donor extends React.Component {
                     data={this.data} 
                 />
                 <DonorEdit 
+                    donorUpdate={donorUpdate}  
                     toggle={this.toggle}  
                     modal={this.state.modal}
                     data={this.state.data}
@@ -77,6 +78,9 @@ const mapDispatchToProps = ( dispatch ) => ({
     },
     donorDelete: ( id ) => {
         dispatch( donorDelete( id ) );
+    },
+    donorUpdate: ( donor ) => {
+        dispatch( donorUpdate( donor ) );
     }
 });
 
