@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-    const ModalExample = ({toggle,modal,clear,onChange,onSubmit,state,data}) => 
+    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state,data}) => 
 
         <div>
           <Modal isOpen={modal}>
@@ -75,7 +75,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                 </ModalBody>
                 <ModalFooter>
                     <Button color="primary" type="submit">Update</Button>
-                    <Button color="secondary" type="button" onClick={clear}>Cancel</Button>
+                    <Button color="secondary" type="button" onClick={cancel}>Cancel</Button>
                 </ModalFooter>
             </Form>
           </Modal>

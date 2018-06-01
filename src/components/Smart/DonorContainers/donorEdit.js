@@ -7,12 +7,12 @@ class Donor extends React.Component {
         this.state = {};
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
-        this.clear = this.clear.bind(this);
+        this.cancel = this.cancel.bind(this);
     }
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
-    clear() {
+    cancel() {
         // console.log(this.state)
         this.setState({ 
             name: '',
@@ -27,9 +27,9 @@ class Donor extends React.Component {
         this.setState(e.data )
     }
     fromSubmit(e) {
-        // console.log('donorUpdate view',this.state)
         this.props.donorUpdate(this.state)
         e.preventDefault();
+        this.props.toggle()
     }
     render(){
         return (
@@ -37,7 +37,7 @@ class Donor extends React.Component {
                 onChange={this.onChange} 
                 onSubmit={this.fromSubmit}
                 toggle={this.props.toggle}  
-                clear={this.clear}  
+                cancel={this.cancel}  
                 modal={this.props.modal}
                 state={this.state}
             />
