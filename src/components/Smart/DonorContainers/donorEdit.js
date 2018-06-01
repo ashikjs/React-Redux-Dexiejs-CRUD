@@ -27,7 +27,7 @@ class Donor extends React.Component {
         this.setState(e.data )
     }
     fromSubmit(e) {
-        console.log('donorUpdate view',this.state)
+        // console.log('donorUpdate view',this.state)
         this.props.donorUpdate(this.state)
         e.preventDefault();
     }

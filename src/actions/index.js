@@ -31,8 +31,20 @@ export function donorAdd(donor) {
             console.log("Error: " + error);
         });
     }
-
-  }
+}
+  
+export function donorUpdate(donor) {
+        return (dispatch) => {
+          db.donors
+            .put(donor)
+            .then(() => {
+              dispatch({
+                type: UPDATE_DONOR,
+                payload: donor,
+              });
+            });
+        };
+}
 
 export function donorDelete(id) {
     return (dispatch) => {
@@ -44,20 +56,5 @@ export function donorDelete(id) {
               payload: id,
             });
           });
-      };
-
-  }
-export function donorUpdate(id) {
-    // return (dispatch) => {
-    //     db.donors
-    //       .put(id)
-    //       .then(() => {
-    //         dispatch({
-    //           type: DELETE_DONOR,
-    //           payload: id,
-    //         });
-    //       });
-    //   };
-    console.log(id)
-
-  }
+    };
+}
