@@ -4,13 +4,7 @@ import DonorAddForm from '../../Presentational/donorAddForm';
 class Donor extends React.Component {
     constructor() {
         super();
-        this.state = {
-            name: '',
-            bloodGroup: '',
-            age: '',
-            weight: '',
-            donateBefore: ''
-        };
+        this.state = {};
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
       }
@@ -19,9 +13,10 @@ class Donor extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
     fromSubmit(e) {
-        // console.log('first view',this.state)
         this.props.donorAdd(this.state)
         e.preventDefault();
+        e.target.reset();
+        this.setState({})
     }
     render(){
         return (
