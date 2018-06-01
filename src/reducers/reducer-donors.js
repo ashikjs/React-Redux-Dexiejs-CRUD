@@ -29,6 +29,8 @@ export default function (state = initialState, { type, payload }) {
         case LOAD_DONORS:
             return payload;
             break;
+        default: 
+            return state 
     }
     return state;
 }

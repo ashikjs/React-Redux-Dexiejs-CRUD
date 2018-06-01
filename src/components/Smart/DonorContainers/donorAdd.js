@@ -4,7 +4,13 @@ import DonorAddForm from '../../Presentational/donorAddForm';
 class Donor extends React.Component {
     constructor() {
         super();
-        this.state = {};
+        this.state = {
+            name: '',
+            bloodGroup: '',
+            age: '',
+            weight: '',
+            donateBefore: ''
+        };
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
       }
