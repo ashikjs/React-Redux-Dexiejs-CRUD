@@ -15,6 +15,18 @@ export const selectUser = (user) => {
     }
 };
 
+export function donorGet() {
+    return (dispatch) => {
+        db.donors
+            .toArray()
+            .then((donor) => {
+                dispatch({
+                    type: LOAD_DONORS,
+                    payload: donor,
+                });
+        });
+    };
+}
 export function donorAdd(donor) {
     return dispatch => {
         db.donors
@@ -49,12 +61,12 @@ export function donorUpdate(donor) {
 export function donorDelete(id) {
     return (dispatch) => {
         db.donors
-          .delete(id)
-          .then(() => {
-            dispatch({
-              type: DELETE_DONOR,
-              payload: id,
-            });
-          });
+            .delete(id)
+            .then(() => {
+                dispatch({
+                    type: DELETE_DONOR,
+                    payload: id,
+                });
+        });
     };
 }

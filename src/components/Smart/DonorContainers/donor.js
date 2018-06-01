@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
 
-import {donorAdd,donorDelete,donorUpdate} from '../../../actions/index';
+import {donorAdd,donorDelete,donorUpdate,donorGet} from '../../../actions/index';
 import DonorAdd from './donorAdd';
 import DonorList from '../../Presentational/donorList';
 import DonorEdit from './donorEdit';
@@ -18,7 +18,9 @@ class Donor extends React.Component {
         this.toggle = this.toggle.bind(this);
         this.data = this.data.bind(this);
     }
-    
+    componentWillMount(){
+        this.props.donorGet()
+    }
     toggle() {
         this.setState({ modal: !this.state.modal });
     }
@@ -70,6 +72,9 @@ const mapDispatchToProps = ( dispatch ) => ({
     },
     donorUpdate: ( donor ) => {
         dispatch( donorUpdate( donor ) );
+    },
+    donorGet: () => {
+        dispatch( donorGet() );
     }
 });
 

@@ -5,13 +5,13 @@ import db from "../db"
 export default class Home extends React.Component {
     constructor() {
         super();
-        this.state = { todos: [] };
+        this.state = { };
     }
 
     componentDidMount(){
-        db.donors.add({}).then (function(){
-            return db.donors
-        })
+        // db.donors.add({}).then (function(){
+        //     return db.donors
+        // })
     }
     
     render() {
