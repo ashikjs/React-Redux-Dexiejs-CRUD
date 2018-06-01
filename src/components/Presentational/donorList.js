@@ -33,7 +33,7 @@ class DonorList extends React.Component {
                     <td>{donor.weight}</td>
                     <td>{donor.donateBefore}</td>
                     <td>
-                        <FontAwesomeIcon icon="user-edit" onClick={this.edit.bind(this, donor)} /> | 
+                        <FontAwesomeIcon icon="user-edit" onClick={this.edit.bind(this, donor)} />| 
                         <FontAwesomeIcon 
                             icon="trash-alt" 
                             onClick={() => donorDelete(donor.id)}
