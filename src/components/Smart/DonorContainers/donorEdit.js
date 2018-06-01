@@ -8,14 +8,12 @@ class Donor extends React.Component {
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
         this.clear = this.clear.bind(this);
-        
-      }
-       
+    }
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
     clear() {
-        console.log(this.state)
+        // console.log(this.state)
         this.setState({ 
             name: '',
             bloodGroup: '',
@@ -24,6 +22,9 @@ class Donor extends React.Component {
             donateBefore: ''
          })
         this.props.toggle()
+    }
+    componentWillReceiveProps(e){
+        this.setState(e.data )
     }
     fromSubmit(e) {
         console.log('donorUpdate view',this.state)
@@ -38,7 +39,6 @@ class Donor extends React.Component {
                 toggle={this.props.toggle}  
                 clear={this.clear}  
                 modal={this.props.modal}
-                data={this.props.data}
                 state={this.state}
             />
         );

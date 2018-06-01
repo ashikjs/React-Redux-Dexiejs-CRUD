@@ -50,17 +50,6 @@ class Donor extends React.Component {
     }
 }
 
-// const Donor = ({donorAdd, donorDelete,data}) =>
-//     <div>
-//         <DonorAdd donorAdd={donorAdd} /> 
-//         <DonorList donorDelete={donorDelete} editDonor={data} />
-//         <DonorEdit 
-//                 // toggle={this.toggle}  
-//                 // modal={this.state.modal}
-//                 data={data}
-//         />
-//     </div>
-
 // Get apps state and pass it as props to UserList
 //      > whenever state changes, the UserList will automatically re-render
 function mapStateToProps(state) {
@@ -73,8 +62,8 @@ function mapStateToProps(state) {
 //     return  bindActionCreators({addDonare: addDonare}, dispatch)
 // }
 const mapDispatchToProps = ( dispatch ) => ({
-    donorAdd: (donort) => {
-        dispatch( donorAdd(donort) );
+    donorAdd: (donor) => {
+        dispatch( donorAdd(donor) );
     },
     donorDelete: ( id ) => {
         dispatch( donorDelete( id ) );

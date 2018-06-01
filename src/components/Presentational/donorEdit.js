@@ -17,12 +17,12 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                             onChange={onChange}
                             name="name"
                             placeholder="Type ur name"
-                            value={state.name || data.name} />
+                            value={state.name} />
                     </FormGroup>
                     <FormGroup class="row mb-sm-2">
                     <div class="col-sm">
                         <Label class="mr-sm-2">Blood Group</Label>
-                        <Input type="select" name="bloodGroup" value={state.bloodGroup || data.bloodGroup} onChange={onChange}>
+                        <Input type="select" name="bloodGroup" value={state.bloodGroup } onChange={onChange}>
                             <option value=""></option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -36,7 +36,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                     </div>
                     <div class="col-sm">
                         <Label class="mr-sm-2">Age</Label>
-                        <Input type="select" name="age" value={state.age || data.age} onChange={onChange}>
+                        <Input type="select" name="age" value={state.age} onChange={onChange}>
                             <option value=""></option>
                             <option value="18-">18-</option>
                             <option value="18+">18+</option>
@@ -47,7 +47,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                     <FormGroup class="row mb-sm-2">
                         <div class="col-sm">
                             <Label class="mr-sm-2">Weight</Label>
-                            <Input type="select" name="weight" value={state.weight || data.weight} onChange={onChange}>
+                            <Input type="select" name="weight" value={state.weight} onChange={onChange}>
                                 <option value=""></option>
                                 <option value="50-">50-</option>
                                 <option value="50+">50+</option>
@@ -55,7 +55,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                         </div>
                         <div class="col-sm">
                             <Label class="mr-sm-2">Previously gave blood</Label>
-                            <Input type="select" name="donateBefore" value={state.donateBefore || data.donateBefore} onChange={onChange}>
+                            <Input type="select" name="donateBefore" value={state.donateBefore} onChange={onChange}>
                                 <option value=""></option>
                                 <option value="NO">NO</option>
                                 <option value="1">1</option>
