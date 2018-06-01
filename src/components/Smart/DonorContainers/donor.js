@@ -19,12 +19,11 @@ class Donor extends React.Component {
         this.data = this.data.bind(this);
     }
     
-    toggle(e) {
+    toggle() {
         this.setState({ modal: !this.state.modal });
     }
     data(e) {
         this.setState({ data: e });
-
     }
 
     render(){
