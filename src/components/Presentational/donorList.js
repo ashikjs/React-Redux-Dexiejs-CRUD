@@ -23,17 +23,20 @@ class DonorList extends React.Component {
                 </tr>
             );
         };
-        return donors.map((donor) => {
+        return donors.map((donor, i) => {
             return (
                 <tr key={donor.id}>
-                    <td scope="row">{donor.id}</td>
+                    <td scope="row">{i+1}</td>
                     <td>{donor.name}</td>
                     <td>{donor.bloodGroup}</td>
                     <td>{donor.age}</td>
                     <td>{donor.weight}</td>
                     <td>{donor.donateBefore}</td>
                     <td>
-                        <FontAwesomeIcon icon="user-edit" onClick={this.edit.bind(this, donor)} />| 
+                        <FontAwesomeIcon 
+                            icon="user-edit" 
+                            onClick={this.edit.bind(this, donor)} 
+                        />|
                         <FontAwesomeIcon 
                             icon="trash-alt" 
                             onClick={() => donorDelete(donor.id)}
