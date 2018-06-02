@@ -71,7 +71,10 @@ const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit
         </Form>
     </div>
 ;
-
+const pagination = ({}) =>
+<div>
+    
+</div>
 // TODO: propTypes use or implement
 
 // Todo.propTypes = {
