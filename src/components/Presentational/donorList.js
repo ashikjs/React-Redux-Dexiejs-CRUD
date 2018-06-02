@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Table,Button } from 'reactstrap';
-import {connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
