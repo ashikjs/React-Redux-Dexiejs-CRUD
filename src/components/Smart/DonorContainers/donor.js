@@ -5,7 +5,7 @@ import {Form,FormGroup,Label,Input,Button} from 'reactstrap';
 
 import {donorAdd,donorDelete,donorUpdate,donorGet} from '../../../actions/index';
 import DonorAdd from './donorAdd';
-import DonorList from '../../Presentational/donorList';
+import DonorList from './donorList';
 import DonorEdit from './donorEdit';
 
 class Donor extends React.Component {
