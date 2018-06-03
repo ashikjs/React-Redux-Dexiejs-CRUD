@@ -2,12 +2,10 @@ import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 class PaginationView extends React.Component {
-    
     renderPagination(){
-        const {currentPage,totalData,perPageData,handlePage} = this.props
+        const {currentPage,totalData,perPage,handlePage} = this.props
         const pageNumbers = [];
-        console.log()
-        for (let i = 1; i <= Math.ceil(totalData / perPageData); i++) {
+        for (let i = 1; i <= Math.ceil(totalData / perPage); i++) {
             pageNumbers.push(
                 <PaginationItem 
                     key={i}
@@ -28,18 +26,24 @@ class PaginationView extends React.Component {
         return pageNumbers
     }
     render(){
-      
-        
+        const { nextPage,totalData,previousPage,perPage,currentPage } = this.props
+        const numberOfFirstPage = 1
+        const numberOfLastPage = Math.ceil(totalData / perPage)
         return (
             <Pagination aria-label="Page navigation" class="justify-content-center">
-                <PaginationItem disabled>
-                    <PaginationLink previous href="#" />
+                <PaginationItem disabled={ numberOfFirstPage < currentPage ? false : true }>
+                    <PaginationLink
+                        previous
+                        href="javascript:"
+                        onClick={numberOfFirstPage < currentPage ? () => previousPage() : ()=>{ return false }}
+                    />
                 </PaginationItem>
                 {this.renderPagination()}
-                <PaginationItem>
+                <PaginationItem disabled={ numberOfLastPage > currentPage ? false : true }>
                     <PaginationLink 
                         next
-                        href="#" 
+                        href="javascript:" 
+                        onClick={numberOfLastPage > currentPage ? () => nextPage() : ()=>{ return false }}
                     />
                 </PaginationItem >
             </Pagination>

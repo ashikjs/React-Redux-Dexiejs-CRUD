@@ -11,13 +11,23 @@ class DonorList extends React.Component {
         super();
         this.state = {
           currentPage: 1,
-          todosPerPage: 5
+          perPage: 5
         };
         this.handlePage = this.handlePage.bind(this);
-      }
+        this.previousPage = this.previousPage.bind(this);
+        this.nextPage = this.nextPage.bind(this);
+    }
 
     handlePage(e){
         this.setState({currentPage: e})
+    }
+
+    previousPage(){
+        1 < this.state.currentPage ? this.setState({currentPage: this.state.currentPage - 1}) : ''
+    }
+
+    nextPage(){
+        this.setState({currentPage: this.state.currentPage + 1})
     }
     edit(donor) {
         this.props.data(donor);
@@ -25,9 +35,9 @@ class DonorList extends React.Component {
     }
     
     renderList() {
-        const { todos, currentPage, todosPerPage } = this.state;
-        const indexOfLastTodo = currentPage * todosPerPage;
-        const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+        const { currentPage, perPage } = this.state;
+        const indexOfLastDonor = currentPage * perPage;
+        const indexOfFirstDonor = indexOfLastDonor - perPage;
         const {donors, donorDelete} = this.props;
         // if (donors) { 
         if (donors.length == 0) {
@@ -38,7 +48,7 @@ class DonorList extends React.Component {
                 </tr>
             );
         };
-        const currentPageDonors = donors.slice(indexOfFirstTodo, indexOfLastTodo);
+        const currentPageDonors = donors.slice(indexOfFirstDonor, indexOfLastDonor);
         return currentPageDonors.map((donor, i) => {
             return (
                 <tr key={donor.id}>
@@ -92,8 +102,10 @@ class DonorList extends React.Component {
            <Pagination
                 handlePage={this.handlePage}
                 totalData={this.props.donors.length}
-                perPageData={5}
+                perPage={this.state.perPage}
                 currentPage={this.state.currentPage}
+                previousPage={this.previousPage}
+                nextPage={this.nextPage}
             />
            
       </div>
