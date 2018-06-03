@@ -10,19 +10,15 @@ class DonorList extends React.Component {
     constructor() {
         super();
         this.state = {
-          todos: ['a','b','c','d','e','f','g','h','i','j','k'],
           currentPage: 1,
           todosPerPage: 5
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handlePage = this.handlePage.bind(this);
       }
 
-    handleClick(event) {
-        this.setState({
-            currentPage: Number(event.target.id)
-        });
+    handlePage(e){
+        this.setState({currentPage: e})
     }
-
     edit(donor) {
         this.props.data(donor);
         this.props.toggle()
@@ -43,7 +39,6 @@ class DonorList extends React.Component {
             );
         };
         const currentPageDonors = donors.slice(indexOfFirstTodo, indexOfLastTodo);
-      
         return currentPageDonors.map((donor, i) => {
             return (
                 <tr key={donor.id}>
@@ -76,11 +71,11 @@ class DonorList extends React.Component {
             <br/>
             <br/>
             <br/>
-            <h2 class="text-center">All Donare List</h2>
+            <h2 class="text-center" >All Donare List</h2>
             <Table hover >
                 <thead>
                 <tr>
-                    <th>SL</th>
+                    <th>SL </th>
                     <th>Name</th>
                     <th>Blood Group</th>
                     <th>Age</th>
@@ -94,7 +89,12 @@ class DonorList extends React.Component {
                 </tbody>
             </Table>
             <hr/>
-           <Pagination />
+           <Pagination
+                handlePage={this.handlePage}
+                totalData={this.props.donors.length}
+                perPageData={5}
+                currentPage={this.state.currentPage}
+            />
            
       </div>
     );

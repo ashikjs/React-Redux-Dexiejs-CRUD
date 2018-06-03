@@ -27,3 +27,6 @@ ul{
 .table td svg.fa-trash-alt {
     color: #da3a3a;    
 }
+.page-link:focus{
+    box-shadow: none;
+}
