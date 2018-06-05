@@ -13,7 +13,6 @@ class Donor extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
     cancel() {
-        // console.log(this.state)
         this.setState({ 
             name: '',
             bloodGroup: '',

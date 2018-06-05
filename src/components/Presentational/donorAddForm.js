@@ -1,9 +1,9 @@
 import React from 'react';
-// import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 import { Form,FormGroup,Label,Input,Button } from 'reactstrap';
 
-const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit}) => 
+const DonorAddForm = ({name,bloodGroup,weight,age,donateBefore,onChange,onSubmit}) => 
     <div>
         <br/>
         <h2 class="text-center">Add a Donare</h2>
@@ -16,7 +16,7 @@ const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit
                     onChange={onChange}
                     name="name"
                     placeholder="Type ur name"
-                    value={name} />
+                    value={name}/>
             </FormGroup>
             <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                 <Label class="mr-sm-2">Blood Group</Label>
@@ -72,14 +72,9 @@ const DonorAddForm = ({name,bloodGroup,weight,age,onChange,donateBefore,onSubmit
     </div>
 ;
 
-// TODO: propTypes use or implement
+DonorAddForm.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+}
 
-// Todo.propTypes = {
-//     title: PropTypes.string.isRequired,
-//     id: PropTypes.number.isRequired,
-//     done: PropTypes.bool,
-//     handleToggleTodo: PropTypes.func.isRequired,
-//     handleDeleteTodo: PropTypes.func.isRequired
-//   };
-  
 export default DonorAddForm;

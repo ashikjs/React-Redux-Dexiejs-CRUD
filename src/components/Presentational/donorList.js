@@ -1,12 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 
 class DonorList extends React.Component {
     renderList() {
         const { donorEdit,donorDelete,currentPageDonors } = this.props;
-        // if (donors) { 
-            
         if (currentPageDonors.length == 0) {
             return (
                 <tr>
@@ -63,5 +62,10 @@ class DonorList extends React.Component {
     }
 }
 
-
+DonorList.propTypes = {
+    donorEdit: PropTypes.func,
+    donorDelete: PropTypes.func,
+    currentPageDonors: PropTypes.array
+}
+  
 export default DonorList;

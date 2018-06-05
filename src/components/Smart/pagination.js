@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 class PaginationView extends React.Component {
     renderPagination(){
@@ -49,6 +50,15 @@ class PaginationView extends React.Component {
             </Pagination>
         );
     }
+}
+
+PaginationView.propTypes = {
+    perPage: PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    totalData: PropTypes.number.isRequired,
+    previousPage: PropTypes.func.isRequired,
+    nextPage: PropTypes.func.isRequired,
+    handlePage: PropTypes.func.isRequired,
 }
 
 export default PaginationView

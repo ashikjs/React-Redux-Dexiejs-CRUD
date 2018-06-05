@@ -1,9 +1,9 @@
 import React from 'react';
-// import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state,data}) => 
+    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state}) => 
 
         <div>
           <Modal isOpen={modal}>
@@ -82,15 +82,13 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
         </div>
     ;
   
-export default ModalExample;
-
-// TODO: propTypes use or implement
-
-// Todo.propTypes = {
-//     title: PropTypes.string.isRequired,
-//     id: PropTypes.number.isRequired,
-//     done: PropTypes.bool,
-//     handleToggleTodo: PropTypes.func.isRequired,
-//     handleDeleteTodo: PropTypes.func.isRequired
-//   };
-  
+    ModalExample.propTypes = {
+        modal: PropTypes.bool.isRequired,
+        state: PropTypes.object.isRequired,
+        cancel: PropTypes.func.isRequired,
+        toggle: PropTypes.func.isRequired,
+        onChange: PropTypes.func.isRequired,
+        onSubmit: PropTypes.func.isRequired
+    };
+    
+    export default ModalExample;
