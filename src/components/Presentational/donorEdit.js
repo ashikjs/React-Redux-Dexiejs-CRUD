@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state}) => 
+    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state,formIsValid}) => 
 
         <div>
           <Modal isOpen={modal}>
             <ModalHeader>Donare Edit</ModalHeader>
-            <Form onSubmit={onSubmit} action="javascript:">
+            <Form onSubmit={formIsValid ? onSubmit : null} action="javascript:">
                 <ModalBody>
                     <FormGroup class=" mb-sm-2">
                         <Label for="name" class="mr-sm-2">Name</Label>
@@ -74,8 +74,8 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
                     </FormGroup>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" type="submit">Update</Button>
-                    <Button color="secondary" type="button" onClick={cancel}>Cancel</Button>
+                    <Button color="primary" type="submit" disabled={!formIsValid}>Update</Button>
+                    <Button color="secondary" type="button" onClick={cancel} >Cancel</Button>
                 </ModalFooter>
             </Form>
           </Modal>

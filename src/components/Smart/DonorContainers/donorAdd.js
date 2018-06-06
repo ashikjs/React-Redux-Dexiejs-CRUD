@@ -12,7 +12,6 @@ class Donor extends React.Component {
             donateBefore: '',
             nameValid: false,
             bloodGroupValid: false,
-            formIsValid: false
         };
         this.fromSubmit = this.fromSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
@@ -55,7 +54,8 @@ class Donor extends React.Component {
         }
         return false;
     }
-    render(){const {nameValid,bloodGroupValid} = this.state
+    render(){
+        const {nameValid,bloodGroupValid} = this.state
         let formIsValid = false
         nameValid && bloodGroupValid ? formIsValid = true : formIsValid = false
         return (
