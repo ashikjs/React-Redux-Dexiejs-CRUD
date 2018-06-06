@@ -30,3 +30,10 @@ ul{
 .page-link:focus{
     box-shadow: none;
 }
+.form-control:focus {
+    box-shadow: none;
+}
+.form-control.error {
+    border-color: red; 
+}
+form .btn.disabled,form .btn:disabled {opacity: 0.3;}

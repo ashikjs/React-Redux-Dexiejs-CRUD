@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Form,FormGroup,Label,Input,Button } from 'reactstrap';
 
-const DonorAddForm = ({name,bloodGroup,weight,age,donateBefore,onChange,onSubmit}) => 
+const DonorAddForm = ({name,bloodGroup,weight,age,donateBefore,onChange,onSubmit,formIsValid}) => 
     <div>
         <br/>
         <h2 class="text-center">Add a Donare</h2>
         <br/>
-        <Form inline onSubmit={onSubmit} action="javascript:">
+        <Form inline onSubmit={formIsValid ? onSubmit : null} action="javascript:">
             <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
                 <Label for="name" class="mr-sm-2">Name</Label>
                 <Input 
@@ -50,10 +50,10 @@ const DonorAddForm = ({name,bloodGroup,weight,age,donateBefore,onChange,onSubmit
                 </Input>
             </FormGroup>
             <FormGroup class="mb-4 mr-sm-4 mb-sm-2">
-                <Label class="mr-sm-2">Previously gave blood</Label>
+                <Label class="mr-sm-2">Previously Gave blood</Label>
                 <Input type="select" name="donateBefore" value={donateBefore} onChange={onChange}>
                     <option value=""></option>
-                    <option value="NO">NO</option>
+                    <option value="0">NO</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -67,7 +67,7 @@ const DonorAddForm = ({name,bloodGroup,weight,age,donateBefore,onChange,onSubmit
                     <option value="10+">10+</option>
                 </Input>
             </FormGroup>
-            <Button class="marginLeft15 mb-sm-2" type="submit" >ADD</Button>
+            <Button class="marginLeft15 mb-sm-2" type="submit" disabled={!formIsValid}>ADD</Button>
         </Form>
     </div>
 ;
