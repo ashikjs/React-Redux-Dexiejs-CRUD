@@ -30,7 +30,7 @@ class DonorList extends React.Component {
                         />|
                         <FontAwesomeIcon 
                             icon="trash-alt" 
-                            onClick={ () => donorDelete(donor.id)}
+                            onClick={ () => donorDelete(donor)}
                         />
                     </td>
                 </tr>                    

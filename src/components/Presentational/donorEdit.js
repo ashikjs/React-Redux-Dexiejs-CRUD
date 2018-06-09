@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-    const ModalExample = ({toggle,modal,cancel,onChange,onSubmit,state,formIsValid}) => 
+    const DonorEditModal = ({toggle,modal,cancel,onChange,onSubmit,state,formIsValid}) => 
 
         <div>
           <Modal isOpen={modal}>
@@ -82,7 +82,7 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
         </div>
     ;
   
-    ModalExample.propTypes = {
+    DonorEditModal.propTypes = {
         modal: PropTypes.bool.isRequired,
         state: PropTypes.object.isRequired,
         cancel: PropTypes.func.isRequired,
@@ -91,4 +91,4 @@ import { Form,FormGroup,Label,Input, Button, Modal, ModalHeader, ModalBody, Moda
         onSubmit: PropTypes.func.isRequired
     };
     
-    export default ModalExample;
+    export default DonorEditModal;

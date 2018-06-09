@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Pagination from '../pagination'
 import DonarListView from '../../Presentational/donorList'
+import DeleteCofirm from '../deleteConfirm'
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
@@ -10,9 +11,17 @@ class DonorList extends React.Component {
         super();
         this.state = {
           currentPage: 1,
-          perPage: 5
+          perPage: 5,
+          modal: false,
+          DModal: false,
+          DonareDeleteId: null,
+          DonareDeleteDetails: {},
         };
         this.donorEdit = this.donorEdit.bind(this);
+        this.donorDelete = this.donorDelete.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.DToggle = this.DToggle.bind(this);
+        this.DConfirm = this.DConfirm.bind(this);
         this.handlePage = this.handlePage.bind(this);
         this.previousPage = this.previousPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
@@ -21,6 +30,32 @@ class DonorList extends React.Component {
     donorEdit(donor) {
         this.props.data(donor);
         this.props.toggle()
+    }
+    
+    donorDelete(donor) {
+        this.setState({
+            DonareDeleteId: donor.id,
+            DonareDeleteDetails: { 
+                name: donor.name ,
+                bloodGroup: donor.bloodGroup
+            }
+        });
+        this.DToggle()
+    }
+    DConfirm() {
+        const id = this.state.DonareDeleteId
+        this.props.donorDelete(id);
+        this.DToggle()
+    }
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+    DToggle() {
+        this.setState({
+            DModal: !this.state.DModal
+        });
     }
     
     handlePage(e){
@@ -46,7 +81,7 @@ class DonorList extends React.Component {
                 <br/>
                 <h2 class="text-center" >All Donare List</h2>
                 <DonarListView
-                    donorDelete={this.props.donorDelete}
+                    donorDelete={this.donorDelete}
                     donorEdit={this.donorEdit}
                     currentPageDonors={currentPageDonors}
                 />
@@ -58,6 +93,12 @@ class DonorList extends React.Component {
                     currentPage={this.state.currentPage}
                     previousPage={this.previousPage}
                     nextPage={this.nextPage}
+                />
+                <DeleteCofirm 
+                    DModal ={this.state.DModal}
+                    DToggle ={this.DToggle}
+                    DConfirm ={this.DConfirm}
+                    DDeatils ={this.state.DonareDeleteDetails}
                 />
             
         </div>
