@@ -26,7 +26,15 @@ class Donor extends React.Component {
         this.props.donorAdd(this.state)
         e.preventDefault();
         e.target.reset();
-        this.setState({})
+        this.setState({ 
+            name: '',
+            bloodGroup: '',
+            age: '',
+            weight: '',
+            donateBefore: '',
+            nameValid: false,
+            bloodGroupValid: false,
+        })
     }
 
     showInputError(target) {
